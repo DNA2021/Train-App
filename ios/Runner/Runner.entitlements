@@ -11,6 +11,8 @@
 		<string>$(TeamIdentifierPrefix)*</string>
 	</array>
 	<key>com.apple.security.application-groups</key>
-	<array/>
+	<array>
+		<string>group.com.dna.trainapp</string>
+	</array>
 </dict>
 </plist>

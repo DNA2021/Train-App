@@ -26,20 +26,7 @@
 		<dict>
 			<key>NSExtensionActivationRule</key>
 			<string>TRUEPREDICATE</string>
-		</dict>
-		<key>NSExtensionMainStoryboard</key>
-		<string>MainInterface</string>
-		<key>NSExtensionPointIdentifier</key>
-		<string>com.apple.share-services</string>
-	</dict>
-	<string>$(FLUTTER_BUILD_NAME)</string>
-	<key>CFBundleVersion</key>
-	<string>$(FLUTTER_BUILD_NUMBER)</string>
-	<key>NSExtension</key>
-	<dict>
-		<key>NSExtensionAttributes</key>
-        <dict>
-            <key>PHSupportedMediaTypes</key>
+			<key>PHSupportedMediaTypes</key>
                <array>
                     <!--TODO: Add this flag, if you want to support sharing video into your app-->
                    <string>Video</string>
@@ -65,7 +52,7 @@
 				<key>NSExtensionActivationSupportsFileWithMaxCount</key>
 				<integer>1</integer>
             </dict>
-        </dict>
+		</dict>
 		<key>NSExtensionMainStoryboard</key>
 		<string>MainInterface</string>
 		<key>NSExtensionPointIdentifier</key>
