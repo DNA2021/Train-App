@@ -24,8 +24,6 @@
 	<dict>
 		<key>NSExtensionAttributes</key>
 		<dict>
-			<key>NSExtensionActivationRule</key>
-			<string>TRUEPREDICATE</string>
 			<key>PHSupportedMediaTypes</key>
                <array>
                     <!--TODO: Add this flag, if you want to support sharing video into your app-->
@@ -34,24 +32,19 @@
                    <string>Image</string>
                </array>
             <key>NSExtensionActivationRule</key>
-            <dict>
-                <!--TODO: Add this flag, if you want to support sharing text into your app-->
-                <key>NSExtensionActivationSupportsText</key>
-                <true/>
-                <!--TODO: Add this tag, if you want to support sharing urls into your app-->
-            	<key>NSExtensionActivationSupportsWebURLWithMaxCount</key>
-            	<integer>1</integer>
-            	<!--TODO: Add this flag, if you want to support sharing images into your app-->
-                <key>NSExtensionActivationSupportsImageWithMaxCount</key>
-                <integer>100</integer>
-                <!--TODO: Add this flag, if you want to support sharing video into your app-->
-                <key>NSExtensionActivationSupportsMovieWithMaxCount</key>
-                <integer>100</integer>
-                <!--TODO: Add this flag, if you want to support sharing other files into your app-->
-                <!--Change the integer to however many files you want to be able to share at a time-->
-				<key>NSExtensionActivationSupportsFileWithMaxCount</key>
-				<integer>1</integer>
-            </dict>
+            <string>SUBQUERY (
+				extensionItems,
+				$extensionItem,
+				SUBQUERY (
+				$extensionItem.attachments,
+				$attachment,
+				(
+				ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "com.apple.pkpass"
+				|| ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "com.apple.pkpass-data"
+				)
+				).@count == 1
+				).@count == 1
+			</string>
 		</dict>
 		<key>NSExtensionMainStoryboard</key>
 		<string>MainInterface</string>
