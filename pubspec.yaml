@@ -28,7 +28,8 @@ dependencies:
   json_annotation: ^3.0.0
   http: 0.12.2
   json_serializable: 3.5.0
-  csv: 4.1.0 
+  csv: 4.1.0
+  background_fetch: ^0.6.0
   flutter:
     sdk: flutter
     
