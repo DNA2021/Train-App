@@ -30,7 +30,12 @@ class TrainTrackerListTile extends StatelessWidget {
             children: [
               TextButton(
                 child: const Text('Set Reminder'),
-                onPressed: () {/* ... */},
+                onPressed: () async {
+                  final timeOfDay = await showTimePicker(
+                    initialTime: TimeOfDay.now(),
+                    context: context,
+                  );
+                },
               ),
               const SizedBox(width: 8),
             ],

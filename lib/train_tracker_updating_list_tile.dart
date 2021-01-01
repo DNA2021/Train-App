@@ -25,7 +25,14 @@ class _TrainTrackerUpdatingListTileState
             "https://pollen-chisel-nephew.glitch.me/departure-board/${widget.trainTracker.fromStation}?destination=${widget.trainTracker.toStation}"),
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
-            return CircularProgressIndicator();
+            return Card(
+              child: Padding(
+                padding: const EdgeInsets.all(49.0),
+                child: Center(
+                  child: CircularProgressIndicator(),
+                ),
+              ),
+            );
           }
           dynamic response = jsonDecode(snapshot.data.body);
           List<dynamic> trainTimes = response['trainServices'];

@@ -22,3 +22,9 @@ samples, guidance on mobile development, and a full API reference.
 ## How to build models
 
 1. Run `flutter pub run build_runner build`
+
+# How to run
+
+1. Run `flutter pub run build_runner watch`
+2. Launch Emulator
+3. Run App

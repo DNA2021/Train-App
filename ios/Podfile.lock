@@ -8,6 +8,8 @@ PODS:
     - Flutter
   - receive_sharing_intent (0.0.1):
     - Flutter
+  - shared_preferences (0.0.1):
+    - Flutter
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
@@ -15,6 +17,7 @@ DEPENDENCIES:
   - pass_flutter (from `.symlinks/plugins/pass_flutter/ios`)
   - path_provider (from `.symlinks/plugins/path_provider/ios`)
   - receive_sharing_intent (from `.symlinks/plugins/receive_sharing_intent/ios`)
+  - shared_preferences (from `.symlinks/plugins/shared_preferences/ios`)
 
 EXTERNAL SOURCES:
   Flutter:
@@ -27,6 +30,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/path_provider/ios"
   receive_sharing_intent:
     :path: ".symlinks/plugins/receive_sharing_intent/ios"
+  shared_preferences:
+    :path: ".symlinks/plugins/shared_preferences/ios"
 
 SPEC CHECKSUMS:
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
@@ -34,6 +39,7 @@ SPEC CHECKSUMS:
   pass_flutter: 431002965a181f690df5ef9dc76a9ac2df4ad1d2
   path_provider: abfe2b5c733d04e238b0d8691db0cfd63a27a93c
   receive_sharing_intent: c0d87310754e74c0f9542947e7cbdf3a0335a3b1
+  shared_preferences: af6bfa751691cdc24be3045c43ec037377ada40d
 
 PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
 

@@ -22,9 +22,17 @@ Future<void> main() async {
             print("$id, $title, $body");
           }),
           macOS: MacOSInitializationSettings()),
-      onSelectNotification: selectNotification);
+      onSelectNotification: (String payload) async {
+    if (payload != null) {
+      debugPrint('notification payload: $payload');
+    }
+    // await Navigator.push(
+    //   context,
+    //   MaterialPageRoute<void>(builder: (context) => SecondScreen(payload)),
+    // );
+  });
 
-  final bool result = await flutterLocalNotificationsPlugin
+  await flutterLocalNotificationsPlugin
       .resolvePlatformSpecificImplementation<
           IOSFlutterLocalNotificationsPlugin>()
       ?.requestPermissions(
@@ -32,16 +40,6 @@ Future<void> main() async {
         badge: true,
         sound: true,
       );
-}
-
-Future selectNotification(String payload) async {
-  if (payload != null) {
-    debugPrint('notification payload: $payload');
-  }
-  // await Navigator.push(
-  //   context,
-  //   MaterialPageRoute<void>(builder: (context) => SecondScreen(payload)),
-  // );
 }
 
 class MyApp extends StatefulWidget {
